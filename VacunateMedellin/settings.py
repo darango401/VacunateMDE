@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'vacunas_med_db',
         'CLIENT': {
-                'host': "mongodb+srv://vacunamed:" +'vacuna123'+ "@vacunasmed.2csmq.mongodb.net/test"
+                'host': "mongodb+srv://vacunamed:" +'vacunamed'+ "@vacunasmed.2csmq.mongodb.net/test"
             }, 
     }
 }

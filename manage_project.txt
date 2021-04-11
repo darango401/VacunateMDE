@@ -1,0 +1,6 @@
+to run server
+python manage.py runserver
+
+to make migrations
+python manage.py makemigrations
+python manage.py migrate

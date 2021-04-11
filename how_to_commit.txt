@@ -1,0 +1,4 @@
+git checkout Desarrollo
+git add -a
+git commit -m “…”
+git push origin Desarrollo

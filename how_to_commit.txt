@@ -1,4 +1,4 @@
 git checkout Desarrollo
-git add -a
+git add -A
 git commit -m “…”
 git push origin Desarrollo

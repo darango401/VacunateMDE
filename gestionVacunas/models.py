@@ -63,7 +63,7 @@ class Vacunado(models.Model):
     # barrio_residencia=models.CharField(max_length=30, choices=BARRIOS.get(comuna_residencia))
     telefono_fijo=models.CharField('Teléfono fijo', max_length=7, null=True, blank=True)
     telefono_movil=models.CharField('Teléfono movil', max_length=10)
-    fecha_vacunacion=models.DateField('Fecha de vacunación', auto_now=False, auto_now_add=False,
+    fecha_vacunacion=models.DateTimeField('Fecha de vacunación', auto_now=False, auto_now_add=False,
                             help_text="Por favor use el siguiente formato: <em>YYYY-MM-DD</em>.")
     vacuna_aplicada=models.CharField(max_length=30, choices=VACUNAS)
     # fecha_prox_vacuna

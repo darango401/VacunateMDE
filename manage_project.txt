@@ -4,3 +4,36 @@ python manage.py runserver
 to make migrations
 python manage.py makemigrations
 python manage.py migrate
+
+Creé la app gestionVacunas con
+python manage.py startapp gestionVacunas
+
+Agregué la app a las apps instaladas en settings.py
+'gestionVacunas',
+
+En modelos, creé el modelo Vacunado
+    class Vacunado(models.Model):
+    nombre=models.CharField(max_length=80)
+    email=models.EmailField(blank=True, null=True)
+
+Importo el modelo que creé en admin.py y lo registré
+    from .models import *
+
+    # Register your models here.
+    admin.site.register(Vacunado)
+
+Voy a crear un superuser
+    python manage.py createsuperuser
+    Username: admin
+    Email address:
+    Password: tic2vacunamed
+
+Hago la migración
+    python manage.py makemigrations
+    python manage.py migrate 
+
+# Al crear usuario
+    Activo: Por si puede acceder a urls que requieran autenticación
+    Staff: Para que pueda acceder al panel de administración
+    Superusuario: Si es superusuario
+

@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#@=wl%1*a2tu%d$y8nh#0w6j5k1toj#$*^@t0co^c)ta6xui^#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'VacunateMedellin.urls'
@@ -85,7 +86,7 @@ DATABASES = {
     }
 }
 """
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
@@ -94,6 +95,14 @@ DATABASES = {
                 'host': "mongodb+srv://vacunamed:" +'vacunamed'+ "@vacunasmed.2csmq.mongodb.net/test"
             }, 
     }
+}
+"""
+import dj_database_url
+from decouple import config
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL') 
+    )
 }
 
 # Password validation
@@ -134,4 +143,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# NEW
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_URL = '/static/'
+
+# NEW
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static')
+)
+
+# NEW. Obligatoria si queremos mostrar imagenes estaticas en nuestro proyecto
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from VacunateMedellin.views import inicio, formulario
-
+from django.config import settings
+from django.config.urls.static import static
 # Dentro de la lista de paths, establecemos las urls.
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', inicio),
     path('formulario/', formulario)
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

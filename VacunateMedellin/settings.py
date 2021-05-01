@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#@=wl%1*a2tu%d$y8nh#0w6j5k1toj#$*^@t0co^c)ta6xui^#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gestionVacunas',
+    'VacunateMedellin',
 ]
 
 MIDDLEWARE = [
@@ -144,8 +145,10 @@ STATIC_URL = '/static/'
 
 # NEW
 STATICFILES_DIRS = (
-    'VacunateMedellin'
+    (os.path.join(BASE_DIR, 'VacunateMedellin/static'),)
 )
 
 # NEW. Obligatoria si queremos mostrar imagenes estaticas en nuestro proyecto
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+LOGIN_REDIRECT_URL = '/admin'

@@ -15,9 +15,9 @@ from django.template import Template, Context
 # Creamos una vista en django declarando una función.
 # Es decir, una función de estas representa una vista.
 # Retorna la respuesta a la petición..
-def inicio(request):
+def login(request):
 
-    doc_path = "VacunateMedellin/templates/index.html"
+    doc_path = "VacunateMedellin/templates/registration/login.html"
     doc_externo = open(doc_path, encoding='utf-8')
 
     # Creación del objeto de tipo Template

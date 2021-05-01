@@ -92,11 +92,106 @@
 			<h4>Ingrese los datos necesarios</h4>
 			<form action="">
 				<div class="contenedor-inputs">
-					<input type="text" placeholder="Usuario">
-					<input type="password" placeholder="*********">
+					<div class="columna">
+						<div>
+							<label for="Nombres">Nombres:</label>
+							<input type="text" placeholder="Nombres" id="Nombres">
+						</div>
+						<div>
+							<label for="Tipo">Tipo de Documento</label>
+							<Select id="Tipo">
+								<option value="Registro Civil">Registro Civil</option>
+								<option value="Tarjeta de identidad">Tarjeta de identidad</option>
+								<option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+								<option value="Cedula de extranjeria">Cedula de extranjeria</option>
+								<option value="Pasaporte">Pasaporte</option>
+								<option value="Menor sin Registrar">Menor sin Registrar</option>
+								<option value="Adulto sin Identificar">Adulto sin Identificar</option>
+							</Select>
+						</div>
+						<div>
+							<label for="Fecha-Nacimiento">Fecha de Nacimiento</label>
+							<input type="date" id="Fecha-Nacimiento">
+						</div>
+						<div>
+							<label for="Correo">Correo</label>
+							<input type="email" placeholder="Example123@email.com" id="Correo">
+						</div>
+						<div>
+							<label for="Telefono">Telefono</label>
+							<input type="number" placeholder="Telefono" id="Telefono">
+						</div>
+						<div>
+							<label for="Fecha-Vacunacion">Fecha de Vacunacion</label>
+							<input type="date" id="Fecha-Vacunacion">
+						</div>
+						<div>
+							<label for="Vacuna">Vacuna Aplicada</label>
+							<select id="Vacuna">
+								<option value="Pfizer">Pfizer/BioNtech</option>
+								<option value="AstraZeneca">AstraZeneca/Oxford</option>
+								<option value="Jansen">Jansen/Johnson & Johnson</option>
+							</select>
+						</div>
+					</div>
+					<div class="columna">
+						<div>
+							<label for="apellidos">Apellidos</label>
+							<input type="text" placeholder="Apellidos" id="apellidos">
+						</div>
+						<div>
+							<label for="Documento">Documento</label>
+							<input type="number" placeholder="Numero de Documento" id="Documento">
+						</div>
+						<div>
+							<label for="Genero">Genero</label>
+							<Select id="Genero">
+								<option value="Masculino">Masculino</option>
+								<option value="Femenino">Femenino</option>
+							</Select>
+						</div>
+						<div>
+							<label for="Comuna">Comuna de Residencia</label>
+							<select id="Comuna">
+								<option value="1 - Popular">Comuna 1 - Popular</option>
+								<option value="2 - Santa Cruz">Comuna 2 - Santa Cruz</option>
+								<option value="3 - Manrique">Comuna 3 - Manrique</option>
+								<option value="4 - Aranjuez">Comuna 4 - Aranjuez</option>
+								<option value="5 - Castilla">Comuna 5 - Castilla</option>
+								<option value="6 - Doce de Octubre">Comuna 6 - Doce de Octubre</option>
+								<option value="7 - Robledo">Comuna 7 - Robledo</option>
+								<option value="8 - Villa Hermosa">Comuna 8 - Villa Hermosa</option>
+								<option value="9 - Buenos Aires">Comuna 9 - Buenos Aires</option>
+								<option value="10 - La Candelaria">Comuna 10 - La Candelaria</option>
+								<option value="11 - Laureles/Estadio">Comuna 11 - Laureles/Estadio</option>
+								<option value="12 - La America">Comuna 12 - La America</option>
+								<option value="13 - San Javier">Comuna 13 - San Javier</option>
+								<option value="14 - El Poblado">Comuna 14 - El Poblado</option>
+								<option value="15  - Guayabal">Comuna 15 - Guayabal</option>
+								<option value="16  - Belén">Comuna 16 - Belén</option>
+							</select>
+						</div>
+						<div>
+							<label for="Celular">Celular</label>
+							<input type="number" placeholder="Celular" id="Celular">
+						</div>
+						<div>
+							<label for="Hora-Vacunacion">Hora de Vacunacion</label>
+							<input type="time" id="Hora-Vacunacion">
+						</div>
+						<div>
+							<label for="Lote">Lote de Vacuna</label>
+							<input type="text" id="Lote">
+						</div>
+					</div>
 				</div>
+				<label class="container" for="Aplicada">Segunda Vacuna Aplicada
+					<input type="checkbox" checked="checked" id="Aplicada">
+					<span class="checkmark"></span>
+				</label>
+				<br><br>
 				<div class="contenedor-boton">
-					<input type="submit" class="btn-submit" id="btn-submit" value="Iniciar Sesion">
+					<input type="submit" class="btn-submit" id="btn-submit" value="Registrar Vacuna">
 				</div>
 			</form>
 		</div>

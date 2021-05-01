@@ -195,7 +195,9 @@ footer .navbar{
 		font-family: 'Monserrat', sans-serif;
 		padding: 20px;
 		text-align: center;
-		width: 700px;
+		width: 900px;
+		max-height: 500px;
+		overflow-y: scroll;
 		opacity: 0;
 		transition: .3s ease all;
 		transform: scale(0.7);
@@ -227,15 +229,105 @@ footer .navbar{
 		margin-bottom: 40px;
 		/* opacity: 0; */
 	}
-	
-	.popup form .contenedor-inputs input{
+
+	.popup form .contenedor-inputs{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 		width: 100%;
+	}
+
+	.popup form .contenedor-inputs label{
+		font-weight: bold;
+	}
+
+	.popup form .contenedor-inputs label:hover{
+		cursor: pointer;
+	}
+
+	.popup form .contenedor-inputs .columna{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		width: 100%;
+		flex: 1;
+	}
+
+	.popup form .contenedor-inputs input, .popup form .contenedor-inputs select{
+		width: 95%;
 		margin-bottom: 20px;
+		margin-left: 5px;
 		height: 52px;
 		line-height: 52px;
 		font-size: 18px;
 		text-align: center;
 		border: 1px solid #BBBBBB;
+	}
+
+	.popup form .contenedor-inputs select{
+		text-align-last: center;
+	}
+
+	.popup form .contenedor-inputs .container {
+		display: block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.popup form .contenedor-inputs .container input{
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	.popup form .contenedor-inputs .container .checkmark{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: #fff;
+	}
+
+	.popup form .contenedor-inputs .container input:hover ~ .checkmark {
+		background-color: #000;
+		color: #fff;
+	}
+
+	.popup form .contenedor-inputs .container input:checked ~ .checkmark {
+		background-color: #000;
+		color: #fff;
+	}
+
+	.popup form .contenedor-inputs .container .checkmark::after{
+		content: "";
+		position: absolute;
+		display: none;
+	}
+
+	.popup form .contenedor-inputs .container input:checked ~ .checkmark::after {
+		display: block;
+	}
+
+	.popup form .contenedor-inputs .container .checkmark::after{
+		left: 9px;
+		top: 5px;
+		width: 5px;
+		height: 10px;
+		border: solid white;
+		border-width: 0 3px 3px 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
 	}
 	
 	.popup form .contenedor-boton .btn-submit{

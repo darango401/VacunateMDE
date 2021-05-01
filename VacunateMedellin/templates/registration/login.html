@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="./css/estilos.css">
+	<title>Inicio de Sesión</title>
+</head>
+<body>
+	<main>
+		<a href="#" class="logotipo btn-abrir-popup" id="logotipo">
+			<div class="texto-animado" id="logo">Registro de Vacunas</div>
+			<p class="subtitulo">Iniciar Sesión</p>
+		</a>
+	</main>
+
+	<div class="overlay" id="overlay">
+		<div class="popup" id="popup">
+			<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+			<h3>Inicia Sesión</h3>
+			<h4>Para iniciar el proceso de registro</h4>
+			<form action="">
+				<div class="contenedor-inputs">
+					<input type="text" placeholder="Usuario">
+					<input type="password" placeholder="*********">
+				</div>
+				<div class="contenedor-boton">
+					<input type="submit" class="btn-submit" id="btn-submit" value="Iniciar Sesion">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="./js/app.js"></script>
+</body>
+</html>

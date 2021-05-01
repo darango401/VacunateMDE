@@ -1,1 +1,0 @@
-web: gunicorn VacunateMedellin.wsgi --log-file -

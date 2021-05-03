@@ -12,6 +12,32 @@ html {
 	scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+body::-webkit-scrollbar:vertical {
+    width:15px;
+}
+
+body::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+body::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
 a {
 	text-decoration: none;
 	outline: none;
@@ -68,7 +94,7 @@ body {
 	height: 100vh;
 }
 
-.contenedor-imagen img {
+.contenedor-imagen .fondo {
 	width: 100%;
 	height: 100%;
 	vertical-align: top;
@@ -79,6 +105,21 @@ body {
 /* * ============================== */
 /* * ============ MAIN ============ */
 /* * ============================== */
+
+header{
+	background-image: url(../img/Doctor-Vacuna.png);
+	background-size: auto;
+}
+
+header .contenedor-imagen{
+	background-color: rgba(255, 255, 255, .4);
+	padding-top: 10%;
+	padding-left: 30%;
+}
+
+header .contenedor-imagen img {
+	width: 700px;
+}
 
 main {
 	min-height: 100vh;
@@ -134,9 +175,49 @@ aside .indice a {
 /* * ========== FOOTER ============ */
 /* * ============================== */
 
+footer{
+	background-image: url(../img/img2.jpg);
+}
+
+footer .contenedor-imagen {
+	padding-top: 5%;
+	padding-left: 20%;
+	background-color: rgba(0, 0, 0, .7);
+}
+
 footer .navbar{
 	position: sticky;
 	bottom: 0;
+}
+
+.item{
+	padding-left: 30px;
+	text-align: center;
+}
+
+.persona{
+	position: inherit;
+	width: 70%;
+	border-radius: 50%;
+	flex: auto;
+}
+
+.row{
+	display: flex;
+	width: 70%;
+}
+
+.cargo {
+	font-size: 14px;
+	color: #B5B5B5;
+}
+
+.nombre{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #f2f2f2;
 }
 
 /* * ============================== */
@@ -167,239 +248,3 @@ footer .navbar{
 		top: 20px;
 	}
 }
-
-
-/* POP UP REGISTRO */
-	/* POPUP */
-	.overlay{
-		background-color: rgba(0,0,0,.3);
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		visibility: hidden;
-	}
-	
-	.overlay.active {
-		visibility: visible;
-	}
-	
-	.popup{
-		background-color: #f8f8f8;
-		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .3);
-		border-radius: 3px;
-		font-family: 'Monserrat', sans-serif;
-		padding: 20px;
-		text-align: center;
-		width: 900px;
-		max-height: 500px;
-		overflow-y: scroll;
-		opacity: 0;
-		transition: .3s ease all;
-		transform: scale(0.7);
-	}
-	
-	.popup .btn-cerrar-popup {
-		font-size: 16px;
-		line-height: 16px;
-		display: block;
-		text-align: right;
-		color: #BBBBBB;
-		transition: .3s ease all;
-	}
-	
-	.popup .btn-cerrar-popup:hover {
-		color: #000;
-	}
-	
-	.popup h3{
-		font-size: 36px;
-		font-weight: 600;
-		margin-bottom: 10px;
-		/* opacity: 0; */
-	}
-	
-	.popup h4{
-		font-size: 26px;
-		font-weight: 300;
-		margin-bottom: 40px;
-		/* opacity: 0; */
-	}
-
-	.popup form .contenedor-inputs{
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		width: 100%;
-	}
-
-	.popup form .contenedor-inputs label{
-		font-weight: bold;
-	}
-
-	.popup form .contenedor-inputs label:hover{
-		cursor: pointer;
-	}
-
-	.popup form .contenedor-inputs .columna{
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		width: 100%;
-		flex: 1;
-	}
-
-	.popup form .contenedor-inputs input, .popup form .contenedor-inputs select{
-		width: 95%;
-		margin-bottom: 20px;
-		margin-left: 5px;
-		height: 52px;
-		line-height: 52px;
-		font-size: 18px;
-		text-align: center;
-		border: 1px solid #BBBBBB;
-	}
-
-	.popup form .contenedor-inputs select{
-		text-align-last: center;
-	}
-
-	.popup form .contenedor-inputs .container {
-		display: block;
-		position: relative;
-		padding-left: 35px;
-		margin-bottom: 12px;
-		cursor: pointer;
-		font-size: 22px;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-	}
-
-	.popup form .contenedor-inputs .container input{
-		position: absolute;
-		opacity: 0;
-		cursor: pointer;
-		height: 0;
-		width: 0;
-	}
-
-	.popup form .contenedor-inputs .container .checkmark{
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 25px;
-		width: 25px;
-		background-color: #fff;
-	}
-
-	.popup form .contenedor-inputs .container input:hover ~ .checkmark {
-		background-color: #000;
-		color: #fff;
-	}
-
-	.popup form .contenedor-inputs .container input:checked ~ .checkmark {
-		background-color: #000;
-		color: #fff;
-	}
-
-	.popup form .contenedor-inputs .container .checkmark::after{
-		content: "";
-		position: absolute;
-		display: none;
-	}
-
-	.popup form .contenedor-inputs .container input:checked ~ .checkmark::after {
-		display: block;
-	}
-
-	.popup form .contenedor-inputs .container .checkmark::after{
-		left: 9px;
-		top: 5px;
-		width: 5px;
-		height: 10px;
-		border: solid white;
-		border-width: 0 3px 3px 0;
-		-webkit-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		transform: rotate(45deg);
-	}
-	
-	.popup form .contenedor-boton .btn-submit{
-		padding: 0 20px;
-		height: 40px;
-		line-height: 40px;
-		border: none;
-		color: #fff;
-		background: var(--primario);
-		border-radius: 3px;
-		font-family: 'Monserrat', sans-serif;
-		font-size: 16px;
-		cursor: pointer;
-		transition: .3s ease all;
-	}
-	
-	.popup form .contenedor-boton .btn-submit:hover{
-		background: rgba(46,95,255,.5);
-	}
-	
-	@media screen and (max-width : 752px){
-		.popup {
-			width: 90%;
-		}
-	}
-	
-		/* ANIMACIONES */
-	
-	.popup.active{
-		opacity: 1;
-		transform: scale(1);
-	}
-	
-	/* .popup.active h3{
-		animation: entradaTitulo 1s ease .5s forwards;
-	}
-	
-	.popup.active h4{
-		animation: entradaSubTitulo 1s ease .5s forwards;
-	}
-	
-	.popup.active .contenedor-inputs{
-		animation: entradaInputs 1s ease 1s forwards;
-	}
-	
-	@keyframes entradaTitulo {
-		from{
-			transform: translateY(-25px);
-			opacity: 0;
-		}
-		to{
-			transform: translateY(0px);
-			opacity: 1;
-		}
-	}
-	
-	@keyframes entradaSubTitulo {
-		from{
-			transform: translateY(25px);
-			opacity: 0;
-		}
-		to{
-			transform: translateY(0px);
-			opacity: 1;
-		}
-	}
-	
-	@keyframes entradaInputs {
-		from{
-			opacity: 0;
-		}
-		to{
-			opacity: 1;
-		}
-	} */

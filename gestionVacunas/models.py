@@ -47,6 +47,7 @@ VACUNAS = [
         ('Pfizer', 'Pfizer/BioNtech'),
         ('AstraZeneca', 'AstraZeneca/Oxford'),
         ('Jansen', 'Jansen/Johnson & Johnson'),
+        ('Sinovac', 'Sinovac/Covax'),
         ]
 
 PUESTOS = [
